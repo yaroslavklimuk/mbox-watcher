@@ -1,0 +1,19 @@
+# source of rules for the initial startup (database|rulesfilejson)
+rules-source: rulesfilejson
+
+# Database credentials
+database:
+  host: "mysql"
+  port: "3306"
+  user: "peng"
+  db: "penguins"
+  pass: "pengpeng"
+
+rulesfilejson:
+  path: "startup-rules.json"
+
+# where to get new files for processing from (textfile|pubsub)
+new-files-source: textfile
+new-files-source-textfile: "new-file-to-watch.txt"
+
+working-dir: "workingdir"

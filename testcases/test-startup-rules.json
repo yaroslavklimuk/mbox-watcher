@@ -1,0 +1,17 @@
+{
+  "rules": [
+    {
+      "headerrules":[
+        [
+          {"key":"From","value":"noreply@ofd.org","type":"plain"},
+          {"key":"Subject","value":"/^.*Your order receipt.*$/","type":"regex"}
+        ]
+      ],
+      "rulesetid": "76f876fgdg",
+      "files":[
+        {"name": "uhdfuighdf@order.penguins.ru", "real-email": "ushughdfuihg@gmail.com"},
+        {"name": "7f89d7g98@order.penguins.ru",  "real-email": "uiuhgdufig@yandex.ru"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "rules": [
+    {
+      "header-rules":[
+        [
+          {"key":"From","value":"noreply@ofd.org","type":"plain"},
+          {"key":"Subject","value":"/^.*Your order receipt.*$/","type":"regex"}
+        ],
+        [
+          {"key":"Subject","value":"/^.*Your order receipt.*$/","type":"regex"}
+          {"key":"Date","value":"2020-04-03 00:00:00","type":"fromdate"}
+          {"key":"Date","value":"2020-04-19 13:14:15","type":"beforedate"}
+        ]
+      ],
+      "ruleset-id": "76f876fgdg",
+      "files":[
+        {"name": "uhdfuighdf@order.penguins.ru", "real-email": "udfhgdfuigh@gmail.com"},
+        {"name": "7f89d7g98@order.penguins.ru", "real-email": "67df5gf7gfd5gdg@yandex.ru"}
+      ]
+    }
+  ]
+}
