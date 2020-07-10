@@ -1,0 +1,43 @@
+From noreply@temailt.est  Wed Apr  8 10:22:17 2020
+Return-Path: <randsender@temailt.est>
+X-Original-To: randomemail12345@mail.com
+Delivered-To: randomemail12345@mail.com
+Received: from some.mailrelay.net (some.mailrelay.net [111.111.111.111])
+	by some.mailserver.net (Postfix) with ESMTP id B63E3401FD5
+	for <randomemail12345@mail.com>; Wed,  8 Apr 2020 10:22:17 +0300 (MSK)
+Received: from some.mailrelay.net (localhost [127.0.0.1])
+	by some.mailrelay.net (ESMTP Application) with ESMTP id 96B4F133665A
+	for <randomemail12345@mail.com>; Wed,  8 Apr 2020 10:22:17 +0300 (MSK)
+Authentication-Results: some.mailrelay.net (relay-filter);
+	dkim=pass (1024-bit key) reason="pass (just generated, assumed good)"
+	header.d=somedomain.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=somedomain.com; h=
+	content-type:content-type:mime-version:subject:subject
+	:message-id:from:from:date:date:received; s=default; t=
+	1586330537; x=1588922538; bh=2WV9KTH/myjAdcVsMKiGEiMVfgVJJK1CP5M
+	pZTfP71s=; b=WEpT7B97BqLyVFwOp/1ZGVB674vKudi0jf2pLsPcw8G36yJ
+	Bhrhvbdj6wCCq0mAwNkv2ADYtLK4rlsTU3CDZoIs+nPXSTMoPjst7SuEZyW5YtZP
+	scIwsocKSgifrArDkZcQeFU9A09Nty/1o0hNtEJnboHPRk1xM9mcasKQ=
+Received: from some.mailrelay.net ([127.0.0.1])
+	by some.mailrelay.net (some.mailrelay.net [127.0.0.1]) (relay-filter, port 10024)
+	with LMTP id wLMAUsr8xsYe
+	for <randomemail12345@mail.com>;
+	Wed,  8 Apr 2020 10:22:17 +0300 (MSK)
+Date: Wed, 8 Apr 2020 10:22:16 +0300
+From: <noreply@temailt.est>
+To: <randomemail12345@mail.com>
+Message-ID: <1914245586.943.1586330536636@smtp.server.net>
+Subject: This is a message for your entire company
+MIME-Version: 1.0
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: base64
+breadcrumbId: ID-interplat63avto3-33645-1586322447740-29-111323
+SID: null
+singularityheader: appId=8*ctrlguid=1580473325*acctguid=5f209742-bb6a-4da6-9842-4f4e76ca0f8d*ts=1586330529623*btid=2134*guid=212714e2-3c49-4f7d-9018-4ff322880d5b*exitguid=10|9*unresolvedexitid=863*cidfrom=17*etypeorder=WEB_SERVICE*esubtype=WEB_SERVICE*cidto={[UNRESOLVED][863]}*tcop=1:32732
+X-Originating-IP: [112.112.112.112]
+
+------=_Part_942_519775205.1586330536590
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: base64
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aenean euismod elementum nisi quis eleifend quam adipiscing vitae. Ut tristique et egestas quis ipsum suspendisse. Gravida quis blandit turpis cursus in. Phasellus egestas tellus rutrum tellus pellentesque eu.

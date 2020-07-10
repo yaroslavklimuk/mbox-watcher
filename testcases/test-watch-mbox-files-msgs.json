@@ -1,0 +1,14 @@
+{
+  "msgs": [
+  	{
+      "messages-to-send": {
+	  	"uhdfuighdf@fakeemail.test": ["message1.mbox", "message3.mbox"],
+	  	"7f89d7g98@fakeemail.test": ["message2.mbox"],
+	  },
+	  "forwarded-messages-md5": {
+	  	"uhdfuighdf@fakeemail.test": ["fg876df87g6df76g87ddfgdfgdg"],
+	  	"7f89d7g98@fakeemail.test": ["7d86g87df6g87d6gd87"],
+	  }
+  	}
+  ]
+}

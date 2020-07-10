@@ -2,51 +2,56 @@ package main
 
 import "os"
 
-func getFilesToParse(files []os.FileInfo, watchedFiles []string) []string {
+func getFilesToParse(files []os.FileInfo, watchedFiles *WatchedFileList) WatchedFileList {
 	filesCount := len(files)
-	var result = make([]string, filesCount)
-
+	result := WatchedFileList{}
 	for _, fileInfo := range files {
-		if fileInfo.Size() > 0 && stringInSlice(fileInfo.Name(), watchedFiles) {
-			result = append(result, fileInfo.Name())
+		if fileInfo.Size() > 0 {
+			watchedFile := getWatchedFileByName(fileInfo.Name(), watchedFiles)
+			if watchedFile != nil {
+				result = append(result, watchedFile)
+			}
 		}
 	}
 	return result
 }
 
-func stringInSlice(a string, list []string) bool {
-	for _, b := range list {
-		if b == a {
-			return true
+func getWatchedFileByName(name string, watchedFiles WatchedFileList) WatchedFile {
+	for _, watchedFile := range watchedFiles {
+		if watchedFile.Filename == name {
+			return watchedFile
 		}
 	}
-	return false
+	return nil
 }
 
-func WatchWorkingDir(workDir string, watchedFiles []string, newFileCh chan string,
-	parseFilesCh chan []string, stopChannel chan bool) {
-
+func WatchWorkingDir(workDir string, watchedFiles *WatchedFileList, stopChannel chan bool) (chan WatchedFileList, error) {
 	workDirItem, openErr := os.Open(workDir)
 	if openErr != nil {
-		panic(openErr)
+		return nil, openErr
 	}
 	defer workDirItem.Close()
-	defer close(parseFilesCh)
 
-	for {
-		select {
-		case stopSignal := <-stopChannel:
-			if stopSignal == true {
-				return
+	filesToParseCh := make(chan WatchedFileList)
+	defer close(filesToParseCh)
+
+	go func() {
+		for {
+			select {
+			case stopSignal := <-stopChannel:
+				if stopSignal == true {
+					return
+				}
+			default:
+				dirContents, readErr := workDirItem.Readdir(-1)
+				if readErr != nil {
+					panic(readErr)
+				}
+				toParse := getFilesToParse(dirContents, watchedFiles)
+				filesToParseCh <- toParse
 			}
-		default:
-			dirContents, readErr := workDirItem.Readdir(-1)
-			if readErr != nil {
-				panic(readErr)
-			}
-			toParse := getFilesToParse(dirContents, watchedFiles)
-			parseFilesCh <- toParse
 		}
+	}()
 
-	}
+	return filesToParseCh
 }

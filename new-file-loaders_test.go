@@ -22,12 +22,11 @@ func TestLoadNewFilesFromTextFile(t *testing.T) {
 		log.Println(err)
 	}
 	json.Unmarshal(data, &testTable)
-	conf := ParseAppConfig("config.yml")
 
 	for ind, tcase := range testTable {
 		t.Run(string(ind), func(t *testing.T) {
 			stopChannel := make(chan bool)
-			newFileChannel := LoadNewFilesFromTextFile(conf, stopChannel)
+			newFileChannel := LoadNewFilesFromTextFile("new-file-to-watch.txt", stopChannel)
 
 			var wg sync.WaitGroup
 			var receivedNewFiles []NewFileToWatch
@@ -42,7 +41,7 @@ func TestLoadNewFilesFromTextFile(t *testing.T) {
 
 			for _, writeNewFile := range tcase.NewFiles {
 				jsonToWrite, _ := json.Marshal(writeNewFile)
-				locErr := ioutil.WriteFile(conf.NewFilesSourceTextfile, jsonToWrite, 0644)
+				locErr := ioutil.WriteFile("new-file-to-watch.txt", jsonToWrite, 0644)
 				if locErr != nil {
 					log.Println(locErr)
 				}

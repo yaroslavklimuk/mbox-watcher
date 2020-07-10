@@ -8,8 +8,8 @@
         ],
         [
           {"key":"Subject","value":"/^.*Your order receipt.*$/","type":"regex"}
-          {"key":"Date","value":"2020-04-03 00:00:00","type":"fromdate"}
-          {"key":"Date","value":"2020-04-19 13:14:15","type":"beforedate"}
+          {"key":"Date","value":"2020-04-03T00:00:00+03:00","type":"fromdate"}
+          {"key":"Date","value":"2020-04-19T13:14:15+03:00","type":"beforedate"}
         ]
       ],
       "ruleset-id": "76f876fgdg",

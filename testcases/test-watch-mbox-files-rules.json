@@ -1,0 +1,21 @@
+{
+  "rules": [
+    {
+      "headerrules":[
+        [
+          {"key":"From","value":"noreply@temailt.est","type":"plain"},
+          {"key":"Subject","value":"/^.*message for.*$/","type":"regex"}
+        ],
+        [
+          {"key":"From","value":"support@temailt.est","type":"plain"},
+          {"key":"Subject","value":"/^.*million dollars.*$/","type":"regex"}
+        ]
+      ],
+      "rulesetid": "76f876fgdg",
+      "files":[
+        {"name": "uhdfuighdf@fakeemail.test", "real-email": "ushughdfuihg@testemail.test"},
+        {"name": "7f89d7g98@fakeemail.test",  "real-email": "uiuhgdufig@testemail.test"}
+      ]
+    }
+  ],
+}
